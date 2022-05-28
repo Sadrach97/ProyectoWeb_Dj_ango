@@ -1,0 +1,372 @@
+html {
+	font-size: 16px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.social-bar {
+	position: fixed;
+	right: 0;
+	top: 35%;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 100;
+}
+
+.icon {
+	color: white;
+	text-decoration: none;
+	padding: .7rem;
+	display: flex;
+	transition: all .5s;
+}
+
+.icon-facebook2 {
+	background: #2e406e;
+}
+
+.icon-twitter {
+	background: #339DC5;
+}
+
+.icon-youtube {
+	background: #E83028;
+}
+
+.icon-instagram {
+	background: #3F60A5;
+}
+
+.icon:first-child {
+	border-radius: 1rem 0 0 0;
+}
+
+.icon:last-child {
+	border-radius: 0 0 0 1rem;
+}
+
+.icon:hover {
+	padding-right: 3rem;
+	border-radius: 1rem 0 0 1rem;
+	box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+}
+
+main>.container {
+  margin: auto;
+  padding: 30px 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100%;
+}
+.centrado{
+  margin-left: 200px;
+  width: 20%;
+  padding: 10px;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?i226ha');
+  src:  url('fonts/icomoon.eot?i226ha#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?i226ha') format('truetype'),
+    url('fonts/icomoon.woff?i226ha') format('woff'),
+    url('fonts/icomoon.svg?i226ha#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak-as: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+body{
+  margin: 0;
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  margin-top: 50px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 50%;
+  }
+
+
+}
+.buttons {
+  min-width: 700px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+  text-decoration: none;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: #000000;
+  color: #f1f1f1;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+}
+
+.buttons a:hover {
+  transform: scale(1.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+.login-box input[type="text"]{
+  border: none;
+    border-bottom: 1px solid blue;
+    background: black;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: rgba(248, 248, 248, 0);
+    color: rgb(255, 255, 255);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #db1608;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.container {
+    padding: 10px;
+    margin-top: -10px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  box-sizing: border-box;
+  position: absolute; /* Stay in place */
+  left: 50%;
+  top: 50%;
+  width: 320px; /* Full width */
+  height: 440px; /* Full height */
+  padding: 70px 30px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
+    margin: 5% auto 0% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 100px; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+body, h1, h2, h3, h4, h5, h6  {
+  margin: 0;
+  font-family: Sofia, serif;
+}
+
+#footer{
+  background: #2e2e2e;
+  width: 100%;
+  height: auto;
+}
+#pie-footer{
+  background: #000;
+  width: 100%;
+  height: auto;
+}
+.titulo-footer{
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+.span-subtitulo{
+  color: rgb(244,246,85);
+  font-weight: 500;
+}
+.contacto{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 35px;
+  font-weight: 800;
+}
+.titulo-contacto{
+  color: #fff;
+}
+#localizcion{
+  color: yellow;
+  font-size: 25px;
+}
+.titulo-colonia{
+  color: #fff;
+  margin-left: 25px;
+}
+.boton-siguenos{
+  background: yellow;
+  width: 50%;
+  height: 45px;
+  margin: 0 auto;
+}
+.siguenos{
+  color: #2e2e2e;
+  text-align: center;
+  position: relative;
+  top: 12px;
+  font-weight: 800;
+}
+#fondo-footer{
+  background: #2e2e2e;
+  width: 100%;
+  height: 50px;
+}

@@ -1,0 +1,92 @@
+.cen{
+    text-align: right;
+}
+.achicar{
+    font-size: 20px;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+  .login-box label {
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .login-box input {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width: 20;
+  }
+  
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #00c3ff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  .login-box input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  .login-box input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #0026ff;
+    color: #000;
+  }
+  
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .login-box a:hover {
+    color: #fff;
+  }
+  body, h1, h2, h3, h4, h5, h6  {
+    margin: 0;
+    font-family: Sofia, serif;
+  }
+  form{
+      text-align: center;
+      margin: 0px;
+      padding: 100px;
+  }
+  
