@@ -23,8 +23,4 @@ function comprobarClave(){
      
      
 }
-function rellenarDatos(){
-  document.f2.nombre1.value = document.f3.nombre2.value;
-  document.f2.clave11.value = document.f3.contra.value;
-}
 
