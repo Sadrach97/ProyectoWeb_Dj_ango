@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="main.css">
     
-    <link rel="stylesheet" href="Proyecto/css/estilo_login.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_login.css' %}">
     <title>Social-bar</title>
 
     
@@ -38,7 +39,7 @@
     <header>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="Menú.html" class="navbar-brand">
+                <a href="{% url 'inicio logo2' %}" class="navbar-brand">
                     <strong><h4>Stylish Foot</h4></strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

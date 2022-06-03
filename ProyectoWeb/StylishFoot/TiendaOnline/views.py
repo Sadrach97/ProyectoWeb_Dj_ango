@@ -7,6 +7,9 @@ def inicio(request):
 def inicio1(request):
     return render(request,'Menú.html')
 
+def inicio2(request):
+    return render(request,'Menú.html')
+
 def registrar(request):
     return render(request,'Register.html')
 
@@ -17,3 +20,6 @@ def registroR(request):
     Correo = request.POST['Correo']
     Contraseña1 = request.POST['clave1']
     Contraseña2 = request.FILES['clave2']
+
+def logeado(request):
+    return render(request,'logeado.html')
