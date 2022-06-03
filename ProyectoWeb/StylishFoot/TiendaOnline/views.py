@@ -23,3 +23,6 @@ def registroR(request):
 
 def logeado(request):
     return render(request,'logeado.html')
+
+def editar(request):
+    return render(request,'Editar_perfil.html')

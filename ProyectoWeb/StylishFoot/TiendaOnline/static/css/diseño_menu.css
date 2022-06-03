@@ -6,12 +6,10 @@ html {
 body{
   margin: 0;
   padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
   background-size: cover;
-  background-size: contain;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background: url(../img/fondo.jpg) 60% 90% no-repeat;
-
+  font-family: sans-serif;
+  height: 100vh;
 }
 
 .social-bar {
@@ -68,6 +66,15 @@ main>.container {
   padding: 30px 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../img/fondo.jpg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100%;
+}
+
 .centrado{
   margin-left: 200px;
   width: 20%;
@@ -114,6 +121,10 @@ main>.container {
 }
 .icon-facebook2:before {
   content: "\ea91";
+}
+
+body{
+  margin: 0;
 }
 
 .footer {
@@ -176,6 +187,11 @@ main>.container {
     height: 40px;
     color: #fff;
     font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Full-width input fields */
@@ -250,9 +266,9 @@ span.psw {
 .modal-content {
   padding: 0;
   background: url(../img/fondo.jpg) no-repeat center top;
-    margin: 5% auto 0% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 100px; /* Could be more or less, depending on screen size */
+  margin: 5% auto 0% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 100px; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -298,6 +314,10 @@ span.psw {
   }
 }
 
+body, h1, h2, h3, h4, h5, h6  {
+  margin: 0;
+  font-family: Sofia, serif;
+}
 
 #footer{
   background: #2e2e2e;
