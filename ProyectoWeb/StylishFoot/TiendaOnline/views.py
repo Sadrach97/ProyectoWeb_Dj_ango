@@ -26,3 +26,12 @@ def logeado(request):
 
 def editar(request):
     return render(request,'Editar_perfil.html')
+
+def admin(request):
+    return render(request, 'menu_admin.html')
+def hombre(request):
+    return render(request, 'hombree.html')
+def mujer(request):
+    return render(request, 'mujer.html')
+def children(request):
+    return render(request, 'children.html')

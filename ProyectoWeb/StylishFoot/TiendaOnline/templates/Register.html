@@ -38,7 +38,7 @@
 
 </div>
 
-        <form action="{% url 'inicio' %}" name="f1" id="form" >
+        <form action="" name="f1" id="form" >
             <div class=" row  ">
                 <div class="col-md-6">
                     <div class="row ">
@@ -87,7 +87,7 @@
             
             <div class="col-md-12 form">
                 <label for="Correo">Correo Electronico</label>
-                <input type="email" class="form-control" placeholder="Ej: (abc@stylish.com)" id="Correo" name="Correo" required>
+                <input type="email" class="form-control" placeholder="Ej: (abc@stylish.com)" id="Correo" name="Correo" required >
                 
             </div>
             
@@ -106,7 +106,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <br>
-                <input type="submit"  onclick="comprobarClave()"  value="Registrarse">
+                <input type="submit"  onclick="comprobarClave(),Correo()"  value="Registrarse">
                 
                 
             
