@@ -38,7 +38,8 @@
 
 </div>
 
-        <form action="" name="f1" id="form" >
+        <form action="{% url 'registroR' %}" name="f1" id="form" method="POST">
+            {% csrf_token %}
             <div class=" row  ">
                 <div class="col-md-6">
                     <div class="row ">

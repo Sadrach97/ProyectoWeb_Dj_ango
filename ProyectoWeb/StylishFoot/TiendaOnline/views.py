@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
+from .models import Cliente,Producto
 # Create your views here.
 def inicio(request):
     return render(request,'Menú.html')
@@ -10,8 +10,9 @@ def inicio1(request):
 def inicio2(request):
     return render(request,'Menú.html')
 
-def registrar(request):
+def register(request):
     return render(request,'Register.html')
+
 
 def registroR(request):
     NombreP = request.POST['nom']
@@ -19,7 +20,10 @@ def registroR(request):
     Telefono = request.POST['telefono']
     Correo = request.POST['Correo']
     Contraseña1 = request.POST['clave1']
-    Contraseña2 = request.FILES['clave2']
+    Contraseña2 = request.POST['clave2']
+
+    Cliente.objects.create(nombre=NombreP,apellido=Apellido,telefono=Telefono,correo=Correo,contraseña=Contraseña1,scontraseña=Contraseña2)
+    return redirect('logeado')
 
 def logeado(request):
     return render(request,'logeado.html')
