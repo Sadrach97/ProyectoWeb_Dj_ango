@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import inicio,inicio1,register,registroR,logeado,inicio2,editar,Editar_perfil,admin,hombre,mujer,children
+from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children
 
 
 urlpatterns = [
@@ -10,10 +10,9 @@ urlpatterns = [
     path('registroR',registroR,name="registroR"),
     path('logeado',logeado,name="logeado"),
     path('inicio2',inicio2,name="inicio logo2"),
-    path('editar',editar,name="editar"),
+    path('Editar_perfil',Editar_perfil,name="Editar_perfil"),
     path('admin1',admin,name="admin"),
     path('hombre',hombre,name="hombre"),
     path('mujer',mujer,name="mujer"),
     path('children',children,name="children"),
-    path('Editar_perfil',Editar_perfil,name="Editar_perfil"),
 ]
