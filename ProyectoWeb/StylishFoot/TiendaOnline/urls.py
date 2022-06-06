@@ -14,6 +14,4 @@ urlpatterns = [
     path('hombre',hombre,name="hombre"),
     path('mujer',mujer,name="mujer"),
     path('children',children,name="children"),
-
-
 ]
