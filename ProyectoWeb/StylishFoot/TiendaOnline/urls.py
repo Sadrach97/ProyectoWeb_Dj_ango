@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA
+from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP
 
 
 
@@ -22,4 +22,5 @@ urlpatterns = [
     path('producto',producto,name="producto"),
     path('Agregar',Agregar,name="Agregar"),
     path('MenuA',MenuA,name="MenuA"),
+    path('registroP',registroP,name="registroP"),
 ]   

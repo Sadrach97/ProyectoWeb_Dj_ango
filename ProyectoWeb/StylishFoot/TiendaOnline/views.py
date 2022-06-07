@@ -57,4 +57,14 @@ def children(request):
 def Agregar(request):
     return render(request, 'AgregarP.html')
 def MenuA(request):
-    return render(request, 'logeado.html')
+    return render(request, 'login_admin.html')
+def registroP(request):
+    Nombre = request.POST['nomP']
+    Modelo = request.POST['modelo']
+    Precio = request.POST['precio']
+    Foto = request.FILES['foto']
+    Descripcion = request.POST['descrip']
+    
+
+    Producto.objects.create(nombreProducto=Nombre,modelo=Modelo,precio=Precio,fotoProducto=Foto,descripcion=Descripcion)
+    return redirect('MenuA')
