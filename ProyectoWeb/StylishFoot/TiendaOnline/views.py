@@ -39,3 +39,22 @@ def mujer(request):
     return render(request, 'mujer.html')
 def children(request):
     return render(request, 'children.html')
+def datos(request):
+    NombreU = request.POST['nom']
+    Apellido1 = request.POST['appate']
+    Telefono1 = request.POST['telefono']
+    Correo1 = request.POST['Correo']
+    Contraseña2 = request.POST['clave1']
+    Contraseña3 = request.POST['clave2']
+
+    cliente = Cliente.objects.get(nombre=NombreU)
+
+def producto(request):
+    contexto = {"nombreProducto":"Tacones","modelo":"Zapatos de Mujer"}
+    return render(request, 'plantilla.html',contexto)
+def children(request):
+    return render(request, 'plantillaZapato.html')
+def Agregar(request):
+    return render(request, 'AgregarP.html')
+def MenuA(request):
+    return render(request, 'logeado.html')

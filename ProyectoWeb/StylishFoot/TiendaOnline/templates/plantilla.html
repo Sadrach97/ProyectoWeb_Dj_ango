@@ -1,0 +1,22 @@
+{% extends 'plantillaZapato.html' %}
+{% load static %}
+
+{% block cabecera %}
+<title>Tacones</title>
+
+{% endblock cabecera %}
+
+{% block producto %}
+<div class="col">
+    <img src="{% static 'img/logo.png' %}" alt="no hay Imagen">
+</div>
+<div class="col">
+    <h3><b>Nombre: </b> {{ nombreProducto }}</h3>
+    <h3><b>Modelo: </b> {{ modelo }}</h3>
+</div>
+<div class="col">
+    &nbsp;
+</div>
+{% endblock producto %}
+</body>
+</html>
