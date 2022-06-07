@@ -7,16 +7,24 @@
 {% endblock cabecera %}
 
 {% block producto %}
+{% for p in plantilla %}
 <div class="col">
-    <img src="{% static 'img/logo.png' %}" alt="no hay Imagen">
+    {% if p.fotoProducto %}
+        Foto Producto
+        <img src="{{ p.fotoProducto.url }}" style="width: 100%;max-width: 100px;">
+    {% endif %}    
 </div>
 <div class="col">
-    <h3><b>Nombre: </b> {{ nombreProducto }}</h3>
-    <h3><b>Modelo: </b> {{ modelo }}</h3>
+    <h3><b>Nombre: </b> {{ p.nombreProducto }}</h3>
+    <h3><b>Modelo: </b> {{ p.modelo }}</h3>
+    <h3><b>Precio: </b> {{ p.precio }}</h3>
+    <h3><b>Descripcion: </b> {{ p.descripcion }}</h3>
+    
 </div>
 <div class="col">
     &nbsp;
 </div>
+{% endfor %}
 {% endblock producto %}
 </body>
 </html>

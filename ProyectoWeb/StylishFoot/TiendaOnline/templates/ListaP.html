@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/diseño_menu.css' %}">
+</head>
+
+<body class="fondo">
+    <div class="container">
+        {% if messages %}
+        <div>
+            {% for i in messages %}
+            <p style="color: red;">{{ i }}</p>
+            {% endfor %}
+        </div>
+
+        {% endif %}
+
+
+        <div class="row">
+            <h1>Listado de Productos</h1>
+        </div>
+
+        <div class="row">
+            <table>
+                {% for p in prod %}
+                <tr style="color: white;">
+                    <td>idProducto: 
+                        {{ p.idProducto }}
+                    </td>
+                    <td>Nombre: 
+                        {{ p.nombreProducto }}
+                    </td>
+                    <td>Modelo: 
+                        {{ p.modelo }}
+                    </td>
+                    <td>Precio: 
+                        {{ p.precio }}
+                    </td>
+                    <td>
+                        {% if p.fotoProducto %}
+                            Foto Producto
+                            <img src="{{ p.fotoProducto.url }}" style="width: 100%;max-width: 100px;">
+                        {% endif %}
+                    </td>
+                    <td>Descripcion: {{ p.descripcion }}</td>
+                     </tr>
+                     <td>
+                         <a href="{% url 'eliminar_P' p.idProducto %}">Eliminar</a>
+                     </td>
+                {% endfor %}
+
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

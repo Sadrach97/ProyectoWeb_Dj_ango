@@ -31,9 +31,12 @@
 
             </div>
         </div>
+        
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
+            {% for c in cli %}            
                 <h3 class="titulo2">{{ c.nombre }}{{ c.apellido }}</h3>
+                {% endfor %}
             </div>
             <div class="container perfil-usuaraio-footer">
                 <div class="row">
@@ -49,6 +52,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="redes-sociales">
                 <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
                 <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
@@ -56,5 +60,27 @@
             </div>
         </div>
     </section>
+    <table>
+        <tr>
+            <td>idProducto</td>
+            <td>Nombre Producto</td>
+            <td>Modelo</td>
+            <td>Precio</td>
+            <td>Foto</td>
+            <td>Descripcion</td>
+        </tr>
+        {% for c in cli %}
+        <tr>
+            <td>{{ c.idCliente }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.telefono }}</td>
+            <td>{{ c.correo }}</td>
+            <td>{{ p.descripcion }}</td>
+             </tr>
+        {% endfor %}
+
+
+    </table>
 </body>
 </html>

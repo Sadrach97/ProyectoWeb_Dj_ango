@@ -40,17 +40,14 @@ def mujer(request):
 def children(request):
     return render(request, 'children.html')
 def datos(request):
-    NombreU = request.POST['nom']
-    Apellido1 = request.POST['appate']
-    Telefono1 = request.POST['telefono']
-    Correo1 = request.POST['Correo']
-    Contraseña2 = request.POST['clave1']
-    Contraseña3 = request.POST['clave2']
+        clientes = Cliente.objects.all()
+        cot = {"cli":clientes}
+        return render(request, 'Editar_perfil.html',cot)
 
-    cliente = Cliente.objects.get(nombre=NombreU)
 
 def producto(request):
-    contexto = {"nombreProducto":"Tacones","modelo":"Zapatos de Mujer"}
+    plantilla = Producto.object.get(idProducto=45)
+    contexto = {"pantilla":plantilla}
     return render(request, 'plantilla.html',contexto)
 def children(request):
     return render(request, 'plantillaZapato.html')
@@ -68,3 +65,12 @@ def registroP(request):
 
     Producto.objects.create(nombreProducto=Nombre,modelo=Modelo,precio=Precio,fotoProducto=Foto,descripcion=Descripcion)
     return redirect('MenuA')
+def eliminar_P(request,id):
+    producto1 = Producto.objects.get(idProducto = id)
+    producto1.delete() #elimina el registro
+
+    return redirect('ListaP')
+def ListaP(request):
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request, 'ListaP.html',cot)

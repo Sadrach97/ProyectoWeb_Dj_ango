@@ -18,7 +18,7 @@ class Producto(models.Model):
     modelo = models.CharField(max_length=20,verbose_name="Modelo zapatilla",blank=False,null=False)
     precio = models.IntegerField(verbose_name="Precio",blank=False,null=False)
     fotoProducto = models.ImageField(upload_to="zapatilla",blank=False,null=False)
-    descripcion = models.CharField(max_length=30,verbose_name="Descripcion",blank=False,null=False)
+    descripcion = models.CharField(max_length=100,verbose_name="Descripcion",blank=False,null=False)
 
     def __str__(self):
         return self.nombreProducto
