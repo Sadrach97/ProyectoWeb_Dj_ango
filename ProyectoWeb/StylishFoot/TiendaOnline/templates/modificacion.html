@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificacion Producto</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/stilo.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://cdnjs.cludflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
+
+
+    <style>
+        
+        body, h1, h2, h3, h4, h5, h6  {
+        font-family: Sofia, serif;
+      }
+    </style>
+
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+        
+    </div>
+
+</div>
+
+        <form action="{% url 'modificaciones_P' producto.idProducto %}" name="f1" id="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class=" row  ">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 " style="background-color: black; color: white;">
+                
+                <div class="row login-box" style="border: white;" >
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                    <h2 class="fst-italic" style="color: aliceblue;">Modificar Producto</h2>
+                </div>
+                    <div class="col-12 form ">
+                <label for="nombre_P">Nombre Producto</label>
+            
+                <input type="text" class="form-control rounded" id="nombre_P" name="nombre_P" value="{{ nombre1.nombreProducto }}" required minlength="8">
+                        
+                        
+                
+                
+            
+            </div>
+                
+            <div class="col-12 ">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" value="{{ nombre1.modelo }}" required minlength="8" maxlength="20">
+                
+            </div>
+                
+                <div class="col-md-6 form">
+                <label for="precio">Precio</label>
+                <input type="number" class="form-control" id="precio" value="{{ nombre1.precio }}" name="precio" required>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                
+            </div>
+            
+            <div class="col-md-12 form">
+                <label for="foto">Foto</label>
+                <input type="file" class="form-control" id="foto" name="foto" value="{{ nombre1.fotoProducto }}" required >
+                
+            </div>
+            
+                <div class="col form">
+                <label for="descrip">Descripcion</label>
+                <input type="text" id="descrip" name="descrip" value="{{ nombre1.descripcion }}">
+                
+                
+                </div>
+            
+            
+            <div class="col-md-4"></div>
+            <div class="col">
+                <br>
+                <input type="submit" value="Modificar Producto">
+                
+                
+            
+            </div>
+            </div>
+            </div>        
+            </div>
+
+            
+            
+           
+                
+        </form>
+
+
+
+    </div>
+    
+    
+
+
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jq.js' %}"></script>
+</body>
+</html>
