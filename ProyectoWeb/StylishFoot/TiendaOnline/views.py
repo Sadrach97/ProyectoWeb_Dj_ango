@@ -2,13 +2,19 @@ from django.shortcuts import render,redirect
 from .models import Cliente,Producto
 # Create your views here.
 def inicio(request):
-    return render(request,'Menú.html')
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request,'Menú.html',cot)
 
 def inicio1(request):
-    return render(request,'Menú.html')
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request,'Menú.html',cot)
 
 def inicio2(request):
-    return render(request,'Menú.html')
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request,'Menú.html',cot)
 
 def register(request):
     return render(request,'Register.html')
@@ -54,7 +60,9 @@ def children(request):
 def Agregar(request):
     return render(request, 'AgregarP.html')
 def MenuA(request):
-    return render(request, 'login_admin.html')
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request, 'login_admin.html',cot)
 def registroP(request):
     Nombre = request.POST['nomP']
     Modelo = request.POST['modelo']
@@ -69,7 +77,7 @@ def eliminar_P(request,id):
     producto1 = Producto.objects.get(idProducto = id)
     producto1.delete() #elimina el registro
 
-    return redirect('ListaP')
+    return redirect('MenuA')
 def ListaP(request):
     productos = Producto.objects.all()
     cot = {"prod":productos}

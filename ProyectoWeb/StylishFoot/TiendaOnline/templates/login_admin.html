@@ -48,13 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="Proyecto/hombree.html" class="nav-link "><h5>Hombre</h5></a>
-                        </li>
-                        <li class="nav-item">
-                        <a href="Proyecto/mujer.html" class="nav-link "><h5>Mujer</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="Proyecto/children.html" class="nav-link"><h5>Infantil</h5></a>
+                            <a href="{% url 'Agregar' %}" class="nav-link"> Agregar Nuevo Zapato</a>
                         </li>
                     </ul>
                     <a href="#" class="btn "><svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: white;">
@@ -124,187 +118,119 @@
     <!--Contenido-->
     <main>
 
-        <div class="container">
+        
 
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem">
-                    <img src="{% static 'img/Principal_mujer2.jpg' %}" height="294">
-                    <div class="card-body">
-                        <h5 class="card-title">Zapatos de tacones de aguja color rojo</h5>
-                        <p class="card-text">CLP 21,000</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="Proyecto/detalle.html" class="btn btn-primary">Detalles</a>
+            <div class="container">
+                
+        
+                
+        
+        
+                <div class="row">
+                    <strong><h1>Listado de Productos</h1></strong>
+                </div>
+        
+                <div class="row">
+                    
+                        
+                            
+                        {% for p in prod %}
+                        
+                        <div class="col-md-4">
+                            <div class="card" style="width: 23rem">
+                                <h4><p> idProducto: {{ p.idProducto }}</p></h4>
+                                {% if p.fotoProducto %}
+                                    <img src="{{ p.fotoProducto.url }}"  height="280" width="280">
+                                {% endif %}
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ p.nombreProducto }}</h5>
+                                    <p class="card-text">{{ p.precio }}</p>
+                                    <p class="card-text">{{ p.descripcion }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a href="{% url 'modificar_P' p.idProducto %}" class="btn btn-success"> Modificar Producto</a> 
+                                        </div>
+                                        <a href="{% url 'eliminar_P' p.idProducto %}" class="btn btn-danger">Eliminar Producto</a>
+                                    </div>
+                                    <br>
+                                </div>
+                                
                             </div>
-                            <a href="#" class="btn btn-success">Agregar</a>
+                            <br>
                         </div>
-                        <br>
+                            
+                            
+                            
+                             
+                             
+                            
+                            <br>
+                        {% endfor %}
+                        
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/principal-removebg-preview.png' %}" height="318">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos de Hombre color Café</h5>
-                    <p class="card-text">CLP 25,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
                     </div>
-                    <br>
+        
                 </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem ">
-                <img src="{% static 'img/Principal_hombre2.jpg' %}" width="#">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Deportivos Hombres</h5>
-                    <p class="card-text">CLP 32,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-        </div>
-        <div class="container">
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/Principal_infantil.jpg' %}" height="350">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Infantiles</h5>
-                    <p class="card-text">CLP 21,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem" >
-                <img src="{% static 'img/Principal_infantil2.jpg' %}" height="350px">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Infantiles</h5>
-                    <p class="card-text">CLP 15,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/Principal_mujer.jpg' %}" height="350">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos de Mujeres</h5>
-                    <p class="card-text">CLP 28,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </div>
-        <a href="{% url 'Agregar' %}" class="btn btn-primary">+ Agregar Nuevo Zapato</a>
-        <a href="{% url 'ListaP' %}" class="btn btn-primary">Listado</a>
+        
+        
+            
+        
 
     </main>
-
+    
     
 
     </div>
     </div>
     </div>
     <footer>
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <p class="contacto">
-                        CONTACTO
-                    </p>
-                    <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
-                    </p>
-                    <div class="boton-siguenos">
-                        <p class="siguenos">
-                            Siguenos
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="contacto">
+                            CONTACTO
                         </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <p class="contacto">
-                        CONTACTO
-                    </p>
-                    <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
-                    </p>
-                    <div class="boton-siguenos">
-                        <p class="siguenos">
-                            Siguenos
+                        <p class="titulo-contacto">
+                            Telefono: (2) 2999 3000
                         </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <p class="contacto">
-                        CONTACTO
-                    </p>
-                    <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
-                    </p>
-                    <div class="boton-siguenos">
-                        <p class="siguenos">
-                            Siguenos
+                        <p class="titulo-contacto">
+                            Encuentranos
                         </p>
+                        <p class="titulo-contacto">
+                            C. Nueva 1660, Huechuraba, Región Metropolitana
+                        </p>
+                        <p class="titulo-contacto">
+                            Edificio
+                        </p>
+                        <p class="titulo-contacto">
+                            Duoc UC: Sede Mall Plaza Norte
+                        </p>
+                        <div class="boton-siguenos">
+                            <p class="siguenos">
+                                Siguenos
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div id="fondo-footer"></div>
-    <div id="pie-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="titulo-footer">
-                        Copyright 02020 all rights reserved | this template is mode width <span class="span-subtitulo">By ColorLib</span>
-                    </p>
-
-                </div>
-
+                  
+    
             </div>
         </div>
-    </div>
-    </footer>
+        <div id="fondo-footer"></div>
+        <div id="pie-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="titulo-footer">
+                            Copyright 02020 all rights reserved | this template is mode width <span class="span-subtitulo">By ColorLib</span>
+                        </p>
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        </footer>
 
     <div class="social-bar">
         <a href="https://www.facebook.com" class="icon icon-facebook2" target="_blank"></a>

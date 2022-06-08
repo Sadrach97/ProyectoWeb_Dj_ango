@@ -152,96 +152,48 @@ window.onclick = function(event) {
     <main>
 
         <div class="container">
-
-            <div class="col-md-4">
-                <div class="card" style="width: 20rem">
-                    <img src="{% static 'img/Principal_mujer2.jpg' %}" height="294">
-                    <div class="card-body">
-                        <h5 class="card-title">Tacones de aguja color rojo</h5>
-                        <p class="card-text">CLP 21,000</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <a href="#" class="btn btn-primary">Detalles</a>
+    
+            <div class="row">
+                
+                    
+                        
+                    {% for p in prod %}
+                    
+                    <div class="col-md-4">
+                        <div class="card" style="width: 23rem">
+                            
+                            {% if p.fotoProducto %}
+                                <img src="{{ p.fotoProducto.url }}"  height="280" width="280">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ p.nombreProducto }}</h5>
+                                <p class="card-text">{{ p.precio }}</p>
+                                <p class="card-text">{{ p.descripcion }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{% url 'modificar_P' p.idProducto %}" class="btn btn-success"> Agregar al carrito</a> 
+                                    </div>
+                                    
+                                </div>
+                                <br>
                             </div>
-                            <a href="#" class="btn btn-success">Agregar</a>
+                            
                         </div>
                         <br>
                     </div>
+                        
+                        
+                        
+                         
+                         
+                        
+                        <br>
+                    {% endfor %}
+                    
                 </div>
+                </div>
+    
             </div>
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/principal-removebg-preview.png' %}" height="318">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos de Hombre color Café</h5>
-                    <p class="card-text">CLP 25,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem ">
-                <img src="{% static 'img/Principal_hombre2.jpg' %}" width="#">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Deportivos Hombres</h5>
-                    <p class="card-text">CLP 32,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-        </div>
-        <div class="container">
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/Principal_infantil.jpg' %}" height="350">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Infantiles</h5>
-                    <p class="card-text">CLP 21,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem" >
-                <img src="{% static 'img/Principal_infantil2.jpg' %}" height="350px">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos Infantiles</h5>
-                    <p class="card-text">CLP 15,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div></div>
-            <div class="col-md-4"><div class="card" style="width: 20rem">
-                <img src="{% static 'img/Principal_mujer.jpg' %}" height="350">
-                <div class="card-body">
-                    <h5 class="card-title">Zapatos de Mujeres</h5>
-                    <p class="card-text">CLP 28,000</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="#" class="btn btn-primary">Detalles</a>
-                        </div>
-                        <a href="#" class="btn btn-success">Agregar</a>
-                    </div>
-                    <br>
-                </div>
-            </div>
-        </div>
     </main>
     <div class="container-fluid">
         <div class="row">
@@ -276,51 +228,19 @@ window.onclick = function(event) {
                         CONTACTO
                     </p>
                     <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
-                    </p>
-                    <div class="boton-siguenos">
-                        <p class="siguenos">
-                            Siguenos
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <p class="contacto">
-                        CONTACTO
+                        Telefono: (2) 2999 3000
                     </p>
                     <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
-                    </p>
-                    <div class="boton-siguenos">
-                        <p class="siguenos">
-                            Siguenos
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <p class="contacto">
-                        CONTACTO
+                        Encuentranos
                     </p>
                     <p class="titulo-contacto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        C. Nueva 1660, Huechuraba, Región Metropolitana
                     </p>
-                    <p>
-                        <i class="fas fa-map-marker-alt" id="localizcion"></i>
-                        <span class="titulo-colonia">
-                            calle Adolfo Lopez Mateos Mz.21. Lt5 Col.Coyoacan Ciudad de Mexico
-                        </span>
+                    <p class="titulo-contacto">
+                        Edificio
+                    </p>
+                    <p class="titulo-contacto">
+                        Duoc UC: Sede Mall Plaza Norte
                     </p>
                     <div class="boton-siguenos">
                         <p class="siguenos">
@@ -328,7 +248,7 @@ window.onclick = function(event) {
                         </p>
                     </div>
                 </div>
-            </div>
+              
 
         </div>
     </div>
