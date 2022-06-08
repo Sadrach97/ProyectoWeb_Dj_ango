@@ -74,3 +74,6 @@ def ListaP(request):
     productos = Producto.objects.all()
     cot = {"prod":productos}
     return render(request, 'ListaP.html',cot)
+
+def carrito(request):
+    return render(request, 'carrito.html')
