@@ -32,7 +32,9 @@ def registroR(request):
     return redirect('logeado')
 
 def logeado(request):
-    return render(request,'logeado.html')
+    productos = Producto.objects.all()
+    cot = {"prod":productos}
+    return render(request,'logeado.html',cot)
 
 def Editar_perfil(request):
     return render(request,'Editar_perfil.html')
@@ -82,6 +84,35 @@ def ListaP(request):
     productos = Producto.objects.all()
     cot = {"prod":productos}
     return render(request, 'ListaP.html',cot)
+def modificar_P(request,id):
+    producto2 = Producto.objects.get(idProducto = id)
+    contexto = {
+        "producto" : producto2
+    }
+    return render(request, 'modificacion.html',contexto)
+def modificaciones_P(request,id):
+    nombre_p = request.POST['nombre_P']
+    precio1 = request.POST['precio']
+    modelo1 = request.POST['modelo']
+    foto1 = request.FILES['foto']
+    descrip1 = request.POST['descrip']
 
+    nombre1 = Producto.objects.get(idProducto= id) #el registro original
+    #comienzo a reemplazar los valores en ese registro original
+    nombre1.nombreProducto = nombre_p
+    nombre1.precio = precio1
+    nombre1.modelo = modelo1
+    nombre1.fotoProducto = foto1
+    nombre1.descripcion = descrip1
+
+    nombre1.save() #update
+    return redirect('MenuA')
 def carrito(request):
-    return render(request, 'carrito.html')
+    producto2 = Producto.objects.all()
+    contexto = {"prod" : producto2}
+    return render(request, 'carrito.html',contexto)
+def agregar(request,id):
+    producto2 = Producto.objects.get(idProducto=id)
+    contexto = {"prod" : producto2}
+    return render(request, 'carrito.html',contexto)
+    
