@@ -56,7 +56,7 @@
                     <td>Descripcion: {{ p.descripcion }}</td>
                      </tr>
                      <td>
-                        <a href="{% url 'modificar_P' p.idProducto %}" class="btn btn-primary"> Modificar Producto</a> 
+                        <a href="{% url 'modificar_P' p.idProducto%}" class="btn btn-primary"> Modificar Producto</a> 
                         <a href="{% url 'eliminar_P' p.idProducto %}">Eliminar</a>
                      </td>
                 {% endfor %}
