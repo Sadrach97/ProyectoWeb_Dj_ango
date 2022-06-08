@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP,eliminar_P,ListaP,modificaciones_P,modificar_P,carrito,agregar
+from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP,eliminar_P,ListaP,modificaciones_P,modificar_P,carrito,agregar,quitar,iniciar
 
 
 
@@ -29,4 +29,6 @@ urlpatterns = [
     path('modificaciones_P/<int:id>',modificaciones_P,name="modificaciones_P"),
     path('carrito',carrito,name="carrito"),
     path('agregar/<int:id>',agregar,name="agregar"),
+    path('quitar/<int:id>',quitar,name="quitar"),
+    path('iniciar',iniciar,name="iniciar"),
 ]    

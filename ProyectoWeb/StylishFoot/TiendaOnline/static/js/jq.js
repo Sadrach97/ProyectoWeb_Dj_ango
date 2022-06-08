@@ -23,6 +23,14 @@ function comprobarClave(){
      
      
 }
+function validar(){
+  Correo = document.f1.Correo.value
 
+  if(Correo == "Admin@stylish.foot"){
+    location.href="login_admin.html"
+  }
+  else
+  location.href="Menú.html"
+}
 
 

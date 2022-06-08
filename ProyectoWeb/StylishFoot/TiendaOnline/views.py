@@ -108,11 +108,15 @@ def modificaciones_P(request,id):
     nombre1.save() #update
     return redirect('MenuA')
 def carrito(request):
-    producto2 = Producto.objects.all()
-    contexto = {"prod" : producto2}
-    return render(request, 'carrito.html',contexto)
+    return render(request, 'carrito.html')
 def agregar(request,id):
     producto2 = Producto.objects.get(idProducto=id)
+    producto2.nombreProducto
     contexto = {"prod" : producto2}
     return render(request, 'carrito.html',contexto)
+def quitar(request,id):
+    producto3 = Producto.objects.all()
+    return render(request, 'carrito.html',contexto)
+def iniciar(request):
+    return render(request, "logeado.html")
     
