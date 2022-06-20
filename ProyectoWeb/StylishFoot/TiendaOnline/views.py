@@ -119,4 +119,14 @@ def quitar(request,id):
     return render(request, 'carrito.html',contexto)
 def iniciar(request):
     return render(request, "logeado.html")
-    
+
+def paginaLogin(request):
+    if request.method=='POST':
+        try:
+            detalleUsuario=nuevoUsuario.objects.get(Email=request.POST['correo'], pwd=request.POST['password'])
+            print("Usuario=", detalleUsuario)
+            request.session['Email']=detalleUsuario.Email
+            return render(request, 'index.html')
+        except nuevoUsuario.doesNotExist as e:
+            messages.success(request, 'Nombre de usuario o Password no es correcto..!')
+    return render(request, 'Login.html')
