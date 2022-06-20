@@ -120,6 +120,8 @@ def quitar(request,id):
 def iniciar(request):
     return render(request, "logeado.html")
 
+
+
 def paginaLogin(request):
     if request.method=='POST':
         try:
