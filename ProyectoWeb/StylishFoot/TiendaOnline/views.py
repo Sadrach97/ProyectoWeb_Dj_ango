@@ -123,7 +123,6 @@ def quitar(request,id):
     return render(request, 'carrito.html',contexto)
 def iniciar(request):
     return render(request, "logeado.html")
-<<<<<<< Updated upstream
 
 
 
@@ -137,11 +136,9 @@ def paginaLogin(request):
         except nuevoUsuario.doesNotExist as e:
             messages.success(request, 'Nombre de usuario o Password no es correcto..!')
     return render(request, 'Login.html')
-=======
 def carr(request):
     car = Carrito.objects.all()
     precio = Carrito.precio
     total = Carrito.objects.annotate(Total=Sum(precio))
     texto = {"carri":car}
     return render(request, 'carrito.html',texto)
->>>>>>> Stashed changes
