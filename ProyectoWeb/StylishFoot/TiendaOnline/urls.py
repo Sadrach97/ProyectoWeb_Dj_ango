@@ -6,7 +6,6 @@ from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perf
 
 
 
-
 urlpatterns = [
     path('',inicio,name="inicio"),
     path('inicio',inicio1,name="inicio logo"),
@@ -19,7 +18,7 @@ urlpatterns = [
     path('hombre',hombre,name="hombre"),
     path('mujer',mujer,name="mujer"),
     path('children',children,name="children"),
-    path('datos',datos,name="datos"),
+    path('d',datos,name="datos"),
     path('producto',producto,name="producto"),
     path('Agregar',Agregar,name="Agregar"),
     path('MenuA',MenuA,name="MenuA"),
@@ -33,6 +32,5 @@ urlpatterns = [
     path('quitar/<int:id>',quitar,name="quitar"),
     path('iniciar',iniciar,name="iniciar"),
     path('carr',carr,name="carr"),
-    path('Login',paginaLogin,name='paginaLogin'),
-]
-
+    path('paginaLogin',paginaLogin,name="paginaLogin"),
+]    
