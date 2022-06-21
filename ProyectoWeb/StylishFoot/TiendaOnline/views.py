@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Cliente,Producto
+from .models import Cliente,Producto,Carrito
+from django.db.models import Sum
+
 # Create your views here.
 def inicio(request):
     productos = Producto.objects.all()
@@ -18,7 +20,7 @@ def inicio2(request):
 
 def register(request):
     return render(request,'Register.html')
-
+    
 
 def registroR(request):
     NombreP = request.POST['nom']
@@ -111,14 +113,17 @@ def carrito(request):
     return render(request, 'carrito.html')
 def agregar(request,id):
     producto2 = Producto.objects.get(idProducto=id)
-    producto2.nombreProducto
-    contexto = {"prod" : producto2}
-    return render(request, 'carrito.html',contexto)
+    i = producto2.idProducto
+    nom = producto2.nombreProducto
+    pre = producto2.precio
+    Carrito.objects.create(idProducto=i,nombreProducto=nom,precio=pre)
+    return redirect('inicio')
 def quitar(request,id):
     producto3 = Producto.objects.all()
     return render(request, 'carrito.html',contexto)
 def iniciar(request):
     return render(request, "logeado.html")
+<<<<<<< Updated upstream
 
 
 
@@ -132,3 +137,11 @@ def paginaLogin(request):
         except nuevoUsuario.doesNotExist as e:
             messages.success(request, 'Nombre de usuario o Password no es correcto..!')
     return render(request, 'Login.html')
+=======
+def carr(request):
+    car = Carrito.objects.all()
+    precio = Carrito.precio
+    total = Carrito.objects.annotate(Total=Sum(precio))
+    texto = {"carri":car}
+    return render(request, 'carrito.html',texto)
+>>>>>>> Stashed changes

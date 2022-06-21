@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -31,6 +32,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
+    <script>
+        $(document).ready(function(){
+            var precio;
+            var total = 0;
+            $('td:nth-child(2)').each(function(){
+                precio=$(this).html();
+                total+=parseInt(precio);
+                $('#total').text(total);
+            });
+        });
+    </script>
 </head>
 
 <body >
@@ -74,21 +86,22 @@
                 <tr>
                   <th scope="col">NOMBRE</th>
                   <th scope="col">PRECIO</th>
+
                   
                 </tr>
               </thead>
-              <tbody>
               
               
+              
+              {% for p in carri %}
                 <tr>
-                  <td>{{prod}}</td>
-                  <td>{{prod.precio}}</td>
-                    
-                
+                  <td>{{ p.nombreProducto }}</td>
+                  <td>{{ p.precio }}</td>
                 </tr>
-                
-              </tbody>
+              {% endfor %}
               
+              <td id="total"></td>
+            
             </table>
             <hr>
             </div>
