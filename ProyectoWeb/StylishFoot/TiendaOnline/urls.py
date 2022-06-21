@@ -1,11 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-<<<<<<< Updated upstream
 
-from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP,eliminar_P,ListaP,modificaciones_P,modificar_P,carrito,agregar,quitar,iniciar,carr
-=======
-from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP,eliminar_P,ListaP,modificaciones_P,modificar_P,carrito,agregar,quitar,iniciar,paginaLogin
->>>>>>> Stashed changes
+from .views import inicio,inicio1,register,registroR,logeado,inicio2,Editar_perfil,admin,hombre,mujer,children,datos,producto,Agregar,MenuA,registroP,eliminar_P,ListaP,modificaciones_P,modificar_P,carrito,agregar,quitar,iniciar,carr,paginaLogin
+
 
 
 
@@ -35,10 +32,7 @@ urlpatterns = [
     path('agregar/<int:id>',agregar,name="agregar"),
     path('quitar/<int:id>',quitar,name="quitar"),
     path('iniciar',iniciar,name="iniciar"),
-<<<<<<< Updated upstream
     path('carr',carr,name="carr"),
-]    
-=======
     path('Login',paginaLogin,name='paginaLogin'),
 ]
->>>>>>> Stashed changes
+

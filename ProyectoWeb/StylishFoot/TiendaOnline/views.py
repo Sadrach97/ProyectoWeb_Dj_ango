@@ -1,12 +1,7 @@
 from django.shortcuts import render,redirect
-<<<<<<< Updated upstream
 from .models import Cliente,Producto,Carrito
 from django.db.models import Sum
-
-=======
-from .models import Cliente,Producto
 from django.contrib import messages
->>>>>>> Stashed changes
 # Create your views here.
 def inicio(request):
     productos = Producto.objects.all()
@@ -138,7 +133,6 @@ def iniciar(request):
 def paginaLogin(request):
     if request.method=='POST':
         try:
-<<<<<<< Updated upstream
             detalleUsuario=nuevoUsuario.objects.get(Email=request.POST['correo'], pwd=request.POST['password'])
             print("Usuario=", detalleUsuario)
             request.session['Email']=detalleUsuario.Email
@@ -146,22 +140,14 @@ def paginaLogin(request):
         except nuevoUsuario.doesNotExist as e:
             messages.success(request, 'Nombre de usuario o Password no es correcto..!')
     return render(request, 'Login.html')
-=======
+
 def carr(request):
     car = Carrito.objects.all()
     precio = Carrito.precio
     total = Carrito.objects.annotate(Total=Sum(precio))
     texto = {"carri":car}
     return render(request, 'carrito.html',texto)
->>>>>>> Stashed changes
-=======
-            detalleUsuario=Cliente.objects.get(correo=request.POST['correo'], contraseña=request.POST['contraseña'])
-            print("Cliente=", detalleUsuario)
-            request.session['correo']=detalleUsuario.correo
-            return render(request, 'logeado.html')
-        except Cliente.DoesNotExist as e:
-            messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
-    return render(request, 'Login.html')
+
 
 def cerrarSesion(request):
     try:
@@ -169,4 +155,3 @@ def cerrarSesion(request):
     except:
         return render(request, 'Menu.html')
     return render(request, 'Menu.html')
->>>>>>> Stashed changes
