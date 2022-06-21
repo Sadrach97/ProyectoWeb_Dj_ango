@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Cliente,Producto,Carrito
 from django.db.models import Sum
-
+from django.contrib import messages
 # Create your views here.
 def inicio(request):
     productos = Producto.objects.all()
@@ -32,6 +32,9 @@ def registroR(request):
 
     Cliente.objects.create(nombre=NombreP,apellido=Apellido,telefono=Telefono,correo=Correo,contraseña=Contraseña1,scontraseña=Contraseña2)
     return redirect('logeado')
+
+def Login(request):
+    return render(request,'Login.html')
 
 def logeado(request):
     productos = Producto.objects.all()
@@ -142,3 +145,11 @@ def carr(request):
     total = Carrito.objects.annotate(Total=Sum(precio))
     texto = {"carri":car}
     return render(request, 'carrito.html',texto)
+
+
+def cerrarSesion(request):
+    try:
+        del request.session['correo']
+    except:
+        return render(request, 'Menu.html')
+    return render(request, 'Menu.html')
