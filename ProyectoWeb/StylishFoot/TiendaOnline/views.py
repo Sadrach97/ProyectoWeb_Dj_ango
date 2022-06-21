@@ -132,12 +132,12 @@ def iniciar(request):
 def paginaLogin(request):
     if request.method=='POST':
         try:
-            detalleUsuario=nuevoUsuario.objects.get(Email=request.POST['correo'], pwd=request.POST['password'])
-            print("Usuario=", detalleUsuario)
-            request.session['Email']=detalleUsuario.Email
-            return render(request, 'index.html')
-        except nuevoUsuario.doesNotExist as e:
-            messages.success(request, 'Nombre de usuario o Password no es correcto..!')
+            detalleUsuario=Cliente.objects.get(correo=request.POST['correo'], contraseña=request.POST['contraseña'])
+            print("Cliente=", detalleUsuario)
+            request.session['correo']=detalleUsuario.correo
+            return redirect('logeado')
+        except Cliente.DoesNotExist as e:
+            messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
     return render(request, 'Login.html')
 def carr(request):
     car = Carrito.objects.all()
