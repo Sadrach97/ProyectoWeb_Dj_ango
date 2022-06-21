@@ -139,6 +139,7 @@ def paginaLogin(request):
         except Cliente.DoesNotExist as e:
             messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
     return render(request, 'Login.html')
+    
 def carr(request):
     car = Carrito.objects.all()
     precio = Carrito.precio
