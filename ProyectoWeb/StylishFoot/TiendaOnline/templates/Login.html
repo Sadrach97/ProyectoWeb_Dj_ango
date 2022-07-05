@@ -6,31 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/diseño_login.css' %}">
+    
 </head>
 <body>
 <form method="post">
-    <center>
-        <div class="container">
-            <hi>Pagina Acceso</hi>
-            {% csrf_token %}
-            <table cellpadding="5" cellspacing="2" border="1">
-                <thead>
-                    <tr>
-                        <th colspan="2" align="center">Formulario Acceso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ingrese su correo electronico</td>
-                        <td><input type="text" placeholder="Ingrese su correo" name="correo" required></td>
-                    </tr>
+    <div class="container login-box">
 
-                    <tr>
+        <img src="{% static 'img/logo.png' %}" class="avatar" alt="Avatar Image">
+        <h1>Pagina Acceso</h1>
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td>Ingrese su correo electronico</td>
+                    <td><input type="text" placeholder="Ingrese su correo" name="correo" required></td>
+                </tr>
+
+                <tr>
                         <td>Contraseña</td>
                         <td><input type="password" placeholder="Ingrese su contraseña" name="contraseña" required></td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center">
+                        <td>
                             <button type="submit">Acceder</button>
                             &nbsp;&nbsp;
                             <button type="reset">Limpiar</button>
@@ -38,13 +37,19 @@
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <a href="#">¿Perdiste tu contraseña?</a><br>
+                <a href="{% url 'registrar' %}">¿No tienes una cuenta?</a>
+            </div>
             {% if messages %}
                 {% for msg in messages %}
                 <b>{{msg}}</b>
                 {% endfor %}
             {% endif %}
         </div>
-    </center>
 </form>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jq.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 </html>

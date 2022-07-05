@@ -33,4 +33,5 @@ function validar(){
   location.href="Menú.html"
 }
 
-
+Swal.fire(
+  'Complete los campos' );
