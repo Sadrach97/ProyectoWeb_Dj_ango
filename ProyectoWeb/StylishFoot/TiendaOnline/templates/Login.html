@@ -6,11 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                    'google_translate_element');
+            } 
+        </script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/diseño_login.css' %}">
     
 </head>
 <body>
+    <div class="bot_bord marg" id="google_translate_element"></div>
+
 <form method="post">
     <div class="container login-box">
 

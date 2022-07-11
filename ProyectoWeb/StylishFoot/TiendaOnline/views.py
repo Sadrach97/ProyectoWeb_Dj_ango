@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Cliente,Producto,Carrito
 from django.db.models import Sum
 from django.contrib import messages
+from django.contrib.auth.models import User
+from rest_framework.parsers import JSONParser
 # Create your views here.
 def inicio(request):
     productos = Producto.objects.all()
@@ -19,6 +21,9 @@ def inicio2(request):
     return render(request,'Menú.html',cot)
 
 def register(request):
+    corr = request.POST['Correo1']
+    Cliente.objects.get(correo = corr)
+    messages.success(request,'El Correo ya se encuentra registrado')
     return render(request,'Register.html')
     
 
@@ -26,7 +31,7 @@ def registroR(request):
     NombreP = request.POST['nom']
     Apellido = request.POST['appate']
     Telefono = request.POST['telefono']
-    Correo = request.POST['Correo']
+    Correo = request.POST['Correo1']
     Contraseña1 = request.POST['clave1']
     Contraseña2 = request.POST['clave2']
 
@@ -37,6 +42,7 @@ def Login(request):
     return render(request,'Login.html')
 
 def logeado(request):
+    
     productos = Producto.objects.all()
     cot = {"prod":productos}
     return render(request,'logeado.html',cot)
@@ -59,10 +65,10 @@ def datos(request):
 
 
 def producto(request):
-    plantilla = Producto.object.get(idProducto=45)
-    contexto = {"pantilla":plantilla}
-    return render(request, 'plantilla.html',contexto)
+    return render(request, 'plantilla.html')
 def children(request):
+    cr = Cliente.objects.all()
+    conte = {"cle":cr}
     return render(request, 'plantillaZapato.html')
 def Agregar(request):
     return render(request, 'AgregarP.html')
@@ -116,6 +122,7 @@ def carrito(request):
     return render(request, 'carrito.html')
 def agregar(request,id):
     producto2 = Producto.objects.get(idProducto=id)
+    cleitne = Cliente.objects.all()
     i = producto2.idProducto
     nom = producto2.nombreProducto
     pre = producto2.precio
@@ -123,7 +130,7 @@ def agregar(request,id):
     return redirect('inicio')
 def quitar(request,id):
     producto3 = Producto.objects.all()
-    return render(request, 'carrito.html',contexto)
+    return render(request, 'carrito.html')
 def iniciar(request):
     return render(request, "logeado.html")
 
@@ -138,12 +145,10 @@ def paginaLogin(request):
             return redirect('logeado')
         except Cliente.DoesNotExist as e:
             messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
-    return render(request, 'Login.html')
+    return render(request, 'Login.html') 
     
 def carr(request):
     car = Carrito.objects.all()
-    precio = Carrito.precio
-    total = Carrito.objects.annotate(Total=Sum(precio))
     texto = {"carri":car}
     return render(request, 'carrito.html',texto)
 
@@ -154,3 +159,14 @@ def cerrarSesion(request):
     except:
         return render(request, 'Menu.html')
     return render(request, 'Menu.html')
+
+def traer(request,id):
+    numero = Cliente.objects.get(idCliente = id)
+    pro = {'Client':numero}
+    return render(request, 'plantillaZapato.html',pro)
+def carr1(request):
+    car = Carrito.objects.all()
+    precio = Carrito.precio
+    total = Carrito.objects.annotate(Total=Sum(precio))
+    texto = {"carri":car}
+    return render(request, 'carrito copy.html',texto)

@@ -12,6 +12,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_login.css' %}">
     <title>Social-bar</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                    'google_translate_element');
+            } 
+        </script>
+
 
     
 
@@ -48,16 +58,16 @@
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="Proyecto/hombree.html" class="nav-link "><h5>Hombre</h5></a>
+                            <a href="Proyecto/hombree.html" class="nav-link "></a>
                         </li>
                         <li class="nav-item">
-                        <a href="Proyecto/mujer.html" class="nav-link "><h5>Mujer</h5></a>
+                        <a href="Proyecto/mujer.html" class="nav-link "></a>
                         </li>
                         <li class="nav-item">
-                            <a href="Proyecto/children.html" class="nav-link"><h5>Infantil</h5></a>
+                            <a href="Proyecto/children.html" class="nav-link"></a>
                         </li>
                     </ul>
-                    <a href="#" class="btn "><svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: white;">
+                    <a href="{% url 'carr1' %}" class="btn "><svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: white;">
                     <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                     </svg></a>
 
@@ -83,6 +93,7 @@
     </div>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="bot_bord marg" id="google_translate_element"></div>
 
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
