@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://cdnjs.cludflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                    'google_translate_element');
+            } 
+        </script>
+
 
 
 
@@ -25,7 +35,8 @@
 
 </head>
 <body>
-    <br>
+    <div class="bot_bord marg" id="google_translate_element"></div>
+
     <br>
     <br>
     <div class="container">
@@ -88,13 +99,13 @@
             
             <div class="col-md-12 form">
                 <label for="Correo">Correo Electronico</label>
-                <input type="email" class="form-control" placeholder="Ej: (abc@stylish.com)" id="Correo" name="Correo" required >
+                <input type="email" class="form-control" placeholder="Ej: (abc@stylish.com)" id="Correo1" name="Correo1" required >
                 
             </div>
             
                 <div class="col-md-6 form">
                 <label for="Contraseña">Contraseña</label>
-                <input type="password" class="form-control" placeholder="(Debe contener 8 caracteres)" name="clave1" id="clave1" style="color: white;" required minlength="8" maxlength="12">
+                <input type="password" class="form-control" placeholder="(Debe contener 8 caracteres)" name="clave1" id="clave1" style="color: white;" required pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"  >
                 
             </div>
             <div class="col-md-6 form">
@@ -108,12 +119,14 @@
             <div class="col-md-4">
                 <br>
                 <input type="submit"  onclick="comprobarClave(),validar()"  value="Registrarse">
-                
+                &nbsp;&nbsp;
+                {% if messages %}
+                {% for msg in messages %}
+                <b>{{msg}}</b>
+                {% endfor %}
+            {% endif %}
                 
             
-            </div>
-            </div>
-            </div>        
             </div>
 
             
