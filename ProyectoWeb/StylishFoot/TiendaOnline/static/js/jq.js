@@ -4,6 +4,17 @@ const inputs = document.querySelectorAll('#form control');
 const formulario_1 = document.getElementById('form1');
 const inputs1 = document.getElementById('#form control1');
 
+const formulario_2 = document.getElementById('form2');
+
+function comprobarUsuario(){
+  correo = document.f2.correo.value
+  correo1 = "Admin@gmail.com"
+
+  if (correo == "Admin@gmail.com"){
+    location.href='http://127.0.0.1:8000/MenuA'
+  }
+
+}
 
 
 

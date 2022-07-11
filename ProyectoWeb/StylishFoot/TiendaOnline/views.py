@@ -3,7 +3,6 @@ from .models import Cliente,Producto,Carrito
 from django.db.models import Sum
 from django.contrib import messages
 from django.contrib.auth.models import User
-from rest_framework.parsers import JSONParser
 # Create your views here.
 def inicio(request):
     productos = Producto.objects.all()
@@ -21,9 +20,16 @@ def inicio2(request):
     return render(request,'Menú.html',cot)
 
 def register(request):
-    corr = request.POST['Correo1']
-    Cliente.objects.get(correo = corr)
-    messages.success(request,'El Correo ya se encuentra registrado')
+    if request.method=='POST':
+        try:
+            detalleUsuario=Cliente.objects.get(correo=request.POST['Correo1'], contraseña=request.POST['contraseña'])
+            print("Cliente=", detalleUsuario)
+            if detalleUsuario.correo == Cliente.objects.all():
+                messages.success(request, 'El correo ya se encuentra registrado')
+            else:
+                return redirect('logeado')
+        except Cliente.DoesNotExist as e:
+            messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
     return render(request,'Register.html')
     
 
@@ -34,6 +40,7 @@ def registroR(request):
     Correo = request.POST['Correo1']
     Contraseña1 = request.POST['clave1']
     Contraseña2 = request.POST['clave2']
+    
 
     Cliente.objects.create(nombre=NombreP,apellido=Apellido,telefono=Telefono,correo=Correo,contraseña=Contraseña1,scontraseña=Contraseña2)
     return redirect('logeado')
@@ -122,7 +129,6 @@ def carrito(request):
     return render(request, 'carrito.html')
 def agregar(request,id):
     producto2 = Producto.objects.get(idProducto=id)
-    cleitne = Cliente.objects.all()
     i = producto2.idProducto
     nom = producto2.nombreProducto
     pre = producto2.precio
@@ -141,12 +147,13 @@ def paginaLogin(request):
         try:
             detalleUsuario=Cliente.objects.get(correo=request.POST['correo'], contraseña=request.POST['contraseña'])
             print("Cliente=", detalleUsuario)
-            request.session['correo']=detalleUsuario.correo
-            return redirect('logeado')
+            if detalleUsuario.correo == "Admin@stylish.foot":
+                return redirect('MenuA')
+            else:
+                return redirect('logeado')
         except Cliente.DoesNotExist as e:
             messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
-    return render(request, 'Login.html') 
-    
+    return render(request, 'Login.html')
 def carr(request):
     car = Carrito.objects.all()
     texto = {"carri":car}
@@ -170,3 +177,13 @@ def carr1(request):
     total = Carrito.objects.annotate(Total=Sum(precio))
     texto = {"carri":car}
     return render(request, 'carrito copy.html',texto)
+
+def admin3(request):
+    ad = User.objects.all()
+    cont = {"todo":ad}
+    return render(request,'admin.html',cont)
+def borrar(request,id):
+    producto3 = Carrito.objects.get(idProducto = id)
+    producto3.delete() #elimina el registro
+    
+    return redirect('carr')

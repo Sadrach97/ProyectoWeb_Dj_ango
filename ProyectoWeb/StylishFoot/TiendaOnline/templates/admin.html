@@ -1,0 +1,32 @@
+<div class="alert alert-primary" role="alert">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="row" colspan="3" class="text-center">CARRITO</th>
+        </tr>
+        <tr>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">PRECIO</th>
+
+          
+        </tr>
+      </thead>
+      
+      
+      
+      {% for p in todo %}
+        <tr>
+          <td>{{ p.username }}</td>
+          <td>{{ p.email }}</td>
+          
+        </tr>
+
+      {% endfor %}
+      <tr>
+      <th>Total: </th>
+      <th id="total" ></th>
+    </tr>
+    {{ ar.idCliente }}
+    </table>
+    <hr>
+    </div>

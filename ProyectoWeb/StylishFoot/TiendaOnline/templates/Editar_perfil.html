@@ -38,28 +38,28 @@
                 </button></a>
             </div>
         </div>
-        
+        {% for c in cli %}
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
                         
-                <h3 class="titulo2">{{ cli.nombre }} {{ cli.apellido }}</h3>
+                <h3 class="titulo2">{{ c.nombre }} {{ c.apellido }}</h3>
                 
             </div>
             <div class="container perfil-usuaraio-footer">
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="lista-datos" style="text-align: left;">
-                            <li><i class="icono fas fa-calendar-alt"></i>Nombre: {{ cli.nombre }} </li>
-                            <li><i class="icono fas fa-calendar-alt"></i>Apellido: {{ cli.apellido }}</li>
-                            <li><i class="icono fas fa-calendar-alt"></i>Correo: {{ cli.correo }}</li>
-                            <li><i class="icono fas fa-user-check"></i>Telefeno:{{ cli.telefono }}</li>
-                            <li><i class="icono fas fa-share-alt"></i>Contraseña:{{ cli.contraseña }}</li>
-                            <li><i class="icono fas fa-map-signs"></i>Confirmar Contraseña:{{ cli.scontraseña }}</li>
+                            <li><i class="icono fas fa-calendar-alt"></i>Nombre: {{ c.nombre }} </li>
+                            <li><i class="icono fas fa-calendar-alt"></i>Apellido: {{ c.apellido }}</li>
+                            <li><i class="icono fas fa-calendar-alt"></i>Correo: {{ c.correo }}</li>
+                            <li><i class="icono fas fa-user-check"></i>Telefeno:{{ c.telefono }}</li>
+                            <li><i class="icono fas fa-share-alt"></i>Contraseña:{{ c.contraseña }}</li>
+                            <li><i class="icono fas fa-map-signs"></i>Confirmar Contraseña:{{ c.scontraseña }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        
+            {% endfor %}
             <div class="redes-sociales">
                 <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
                 <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>

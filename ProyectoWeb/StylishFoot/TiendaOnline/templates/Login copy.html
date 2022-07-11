@@ -32,7 +32,7 @@
             <tbody>
                 <tr>
                     <td>Ingrese su correo electronico</td>
-                    <td><input type="text" placeholder="Ingrese su correo" name="correo" required></td>
+                    <td><input type="text" placeholder="Ingrese su correo" name="correo3" required></td>
                 </tr>
 
                 <tr>
@@ -50,7 +50,7 @@
             </table>
             <div>
                 <a href="{% url 'inicio' %}">Volver al Inicio</a><br>
-                <a href="{% url 'registrar' %}">¿No tienes una cuenta?</a><br>
+                <a href="{% url 'registrar' %}">¿No tienes una cuenta?</a>
             </div>
             {% if messages %}
                 {% for msg in messages %}
