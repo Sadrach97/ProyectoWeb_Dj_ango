@@ -21,9 +21,6 @@ def inicio2(request):
     return render(request,'Menú.html',cot)
 
 def register(request):
-    corr = request.POST['Correo1']
-    Cliente.objects.get(correo = corr)
-    messages.success(request,'El Correo ya se encuentra registrado')
     return render(request,'Register.html')
     
 
