@@ -20,16 +20,6 @@ def inicio2(request):
     return render(request,'Menú.html',cot)
 
 def register(request):
-    if request.method=='POST':
-        try:
-            detalleUsuario=Cliente.objects.get(correo=request.POST['Correo1'], contraseña=request.POST['contraseña'])
-            print("Cliente=", detalleUsuario)
-            if detalleUsuario.correo == Cliente.objects.all():
-                messages.success(request, 'El correo ya se encuentra registrado')
-            else:
-                return redirect('logeado')
-        except Cliente.DoesNotExist as e:
-            messages.success(request, 'Nombre de usuario o Contraseña no es correcto..!')
     return render(request,'Register.html')
     
 
@@ -185,5 +175,5 @@ def admin3(request):
 def borrar(request,id):
     producto3 = Carrito.objects.get(idProducto = id)
     producto3.delete() #elimina el registro
-    
+
     return redirect('carr')
