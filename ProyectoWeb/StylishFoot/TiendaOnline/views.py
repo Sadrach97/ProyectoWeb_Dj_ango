@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Cliente,Producto,Carrito
+from .models import Cliente,Producto,Carrito,DetalleCarrito
 from django.db.models import Sum
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -177,3 +177,17 @@ def borrar(request,id):
     producto3.delete() #elimina el registro
 
     return redirect('carr')
+
+def agregar1(request,id):
+    producto2 = Producto.objects.get(idProducto=id)
+    i = producto2.idProducto
+    nom = producto2.nombreProducto
+    pre = producto2.precio
+    Carrito.objects.create(idProducto=i,nombreProducto=nom,precio=pre)
+    return redirect('logeado')
+
+def borrar1(request,id):
+    producto3 = Carrito.objects.get(idProducto = id)
+    producto3.delete() #elimina el registro
+
+    return redirect('carr1')

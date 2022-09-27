@@ -1,3 +1,4 @@
+from zlib import DEF_BUF_SIZE
 from django.db import models
 
 # Create your models here.
@@ -30,4 +31,13 @@ class Carrito(models.Model):
 
     def __str__(self):
         return self.nombreProducto
+
+class DetalleCarrito(models.Model):
+    idDetalle = models.AutoField(primary_key=True,verbose_name="Id Detalle")
+    idProd = models.IntegerField(verbose_name="Id del producto")
+    idclie = models.IntegerField(verbose_name="Id del Cliente")
+    nombrePo = models.CharField(max_length=100,verbose_name="Nombre del Producto",blank= False,null= False)
+
+    def __str__(self):
+        return self.idDetalle
 

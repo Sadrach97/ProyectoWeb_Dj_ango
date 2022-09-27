@@ -109,6 +109,7 @@
                 <tr>
                   <td>{{ p.nombreProducto }}</td>
                   <td>{{ p.precio }}</td>
+                  <td><a href="{% url 'borrar1' p.idProducto %}" class="btn btn-danger">Eliminar Producto</a></td>
                 </tr>
 
               {% endfor %}
